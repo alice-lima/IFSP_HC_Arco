@@ -108,23 +108,23 @@
 	
 		<label>Escolaridade</label>
 		<ul>
-			<li><input type="radio" name="grupo" value="">Fundamental Incompleto</li>
-			<li><input type="radio" name="grupo" value="">Fundamental Completo</li>
-			<li><input type="radio" name="grupo" value="">Médio Incompleto</li>
-			<li><input type="radio" name="grupo" value="">Médio Completo</li>
-			<li><input type="radio" name="grupo" value="">Superior Incompleto</li>
-			<li><input type="radio" name="grupo" value="">Superior Completo</li>
+			<li><input type="radio" name="grupo1" value="">Fundamental Incompleto</li>
+			<li><input type="radio" name="grupo1" value="">Fundamental Completo</li>
+			<li><input type="radio" name="grupo1" value="">Médio Incompleto</li>
+			<li><input type="radio" name="grupo1" value="">Médio Completo</li>
+			<li><input type="radio" name="grupo1" value="">Superior Incompleto</li>
+			<li><input type="radio" name="grupo1" value="">Superior Completo</li>
 		</ul>
 		
 		<label>Nível Socioeconômico</label>
 		<button>Calcular</button>
 		
 		<ul>
-			<li><input type="radio" name="grupo" value="">A</li>
-			<li><input type="radio" name="grupo" value="">B</li>
-			<li><input type="radio" name="grupo" value="">C</li>
-			<li><input type="radio" name="grupo" value="">D</li>
-			<li><input type="radio" name="grupo" value="">E</li>
+			<li><input type="radio" name="grupo2" value="">A</li>
+			<li><input type="radio" name="grupo2" value="">B</li>
+			<li><input type="radio" name="grupo2" value="">C</li>
+			<li><input type="radio" name="grupo2" value="">D</li>
+			<li><input type="radio" name="grupo2" value="">E</li>
 		</ul>
 	
 	</fieldset>
@@ -196,31 +196,39 @@
 		<legend>Vícios</legend>
 		<label>Uso/abuso/dependência de álcool</label>
 		<ul>
-			<li><input type="radio" name="grupo" value="">Sim</li>
-			<li><input type="radio" name="grupo" value="">Não</li>
-			<li><input type="radio" name="grupo" value="">Não há informações</li>
-			<li><input type="radio" name="grupo" value="">Outro</li>
+			<li><input type="radio" name="grupo3" value="">Sim</li>
+			<li><input type="radio" name="grupo3" value="">Não</li>
+			<li><input type="radio" name="grupo3" value="">Não há informações</li>
+			<li><input type="radio" name="grupo3" value="">Outro</li>
 		</ul>
-		
+	
 		<br/>
 		<label>Uso de drogas ilícitas</label>
 		<ul>
-			<li><input type="radio" name="grupo" value="">Sim</li>
-				<ul>
-					<li><input type="checkbox">Cocaína</li>
-					<li><input type="checkbox">Crack</li>
-					<li><input type="checkbox">Heroína</li>
-					<li><input type="checkbox">Ecstasy e/ou estimulantes</li>
-					<li><input type="checkbox">Maconha</li>
-					<li><input type="checkbox">Outros</li>
+		<form>
+			<li><input type="radio" onclick="aparece()" name="grupo" value="" id="sim">Sim</li>
+				<ul style="visibility:hidden;" name="testando"> 
+					<li><input name="cboCoca" type="checkbox">Cocaína</li>
+					<li><input name="cboCrack" type="checkbox">Crack</li>
+					<li><input name="cboHeroina" type="checkbox">Heroína</li>
+					<li><input name="cboEcstasy" type="checkbox">Ecstasy e/ou estimulantes</li>
+					<li><input name="cboMaconha" type="checkbox">Maconha</li>
+					<li><input name="cboOutros" type="checkbox">Outros</li>
 				</ul>
 			
 			<li><input type="radio" name="grupo" value="">Não</li>
-		</ul>
-		
-		
+			</form>
+		</ul>	
 	</fieldset>
 	
+	<script>
+		if(document.getElementById("sim").checked){
+			document.forms(0).testando.style.visibility = "visible";
+		}
+		else{
+			document.forms(0).testando.style.visibility = "hidden";
+		}
+	</script>
 	<button>Próximo</button>
    
     <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
