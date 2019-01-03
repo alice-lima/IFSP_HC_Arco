@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>ARCO</title>
+  </head>
+  <body>
+	<h2>Anamnese</h2>
+	<fieldset>
+		<legend>Informações</legend>
+		<label>Breve descrição</label>
+		<br/>
+		<textarea></textarea>
+		<br/>
+		
+		<label>Data do evento principal</label>
+		<input type="text" class="form-control" placeholder="Ex.: dd/mm/aaaa" data-mask="00/00/0000" maxlength="10" autocomplete="off">
+		<br/>
+		
+		<label>Tipo de acidente</label>
+		<ul>
+			<li><input type="radio" name="grupo1" value="">Civil</li>
+			<li><input type="radio" name="grupo1" value="">Esportivo</li>
+			<li><input type="radio" name="grupo1" value="">Militar</li>
+		</ul>
+		
+		<label>Causa do acidente</label>
+		<ul>
+			<li><input type="radio" name="grupo2" value="">Conflito interpessoal (domicílio)</li>
+			<li><input type="radio" name="grupo2" value="">Conflito interpessoal (via pública)</li>
+			<li><input type="radio" name="grupo2" value="">Acidente de trânsito (atropelamento - pedestre)</li>
+			<li><input type="radio" name="grupo2" value="">Acidente de trânsito (motorista ou passageiro - dentro do veículo)</li>
+			<li><input type="radio" name="grupo2" value="">Acidente de trânsito (atropelamento - moto)</li>
+			<li><input type="radio" name="grupo2" value="">Acidente de trânsito (bicicleta)</li>
+			<li><input type="radio" name="grupo2" value="">Acidente doméstico (queda de objeto sobre a pessoa)</li>
+			<li><input type="radio" name="grupo2" value="">Acidente doméstico (queda de algum lugar ou própria altura)</li>
+			<li><input type="radio" name="grupo2" value="">Acidente de trabalho (queda de objeto sobre a pessoa ou queda de algum lugar)</li>
+			<li><input type="radio" name="grupo2" value="">Outro (outra situação de acidente de trânsito)</li>
+			<li><input type="radio" name="grupo2" value="">Não há informação</li>
+			<li><input type="radio" name="grupo2" value="">Não se aplica</li>
+		</ul>
+		
+		<label>Associação do TCE com uso de álcool</label>
+		<ul>
+			<li><input type="radio" name="grupo3" value="">Sim - TCE foi ou pode ter sido consequência da ingestão de álcool</li>
+			<li><input type="radio" name="grupo3" value="">Não - não se sabe se pode ter havido correlação</li>
+			<li><input type="radio" name="grupo3" value="">Não há informação</li>
+			<li><input type="radio" name="grupo3" value="">Não tem certeza</li>
+		</ul>
+		
+		<label>Perda de consciência</label>
+		<input type="radio" name="grupo4" value="sim">Sim
+		<input type="radio" name="grupo4" value="nao">Não
+		<br/>
+		
+		<label>Amnésia pós-traumática</label>
+		<input type="radio" name="grupo5" value="sim">Sim
+		<input type="radio" name="grupo5" value="nao">Não
+		<br/>
+		
+		<label>Foi submetido a procedimento neurocirúrgico</label>
+		<input type="radio" name="grupo6" value="sim">Sim
+		<input type="radio" name="grupo6" value="nao">Não
+		<br/>
+		
+	</fieldset>
+	
+	<fieldset>
+		<legend>TCE's anteriores</legend>
+		<form>
+		<ul>
+			<li><input type="radio" id="sim" onclick="aparece()" name="grupo7" value="sim">Sim
+				<br/>
+				<label type="text" id="lblTipo" style="visibility:hidden;">Tipo</label>
+				<input type="text" name="txtTipo" style="visibility:hidden;">
+				<br/>
+				<label type="text" ="lblCausa" style="visibility:hidden;">Causa</label>
+				<input type="text" name="txtCausa" style="visibility:hidden;">
+			<li><input type="radio" id="nao" onclick="aparece()" name="grupo7" value="nao">Não</li>
+			
+			
+		</ul>
+		</form>
+	</fieldset>
+  
+    <script src="js/jquery.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<script>
+		function aparece(){
+			if(document.getElementById("sim").checked){		
+				document.forms[0].lblTipo.style.visibility="visible";
+				document.forms[0].txtTipo.style.visibility="visible";
+				document.forms[0].lblCausa.style.visibility="visible";
+				document.forms[0].txtCausa.style.visibility="visible";
+			}
+			else if(document.getElementById("nao").checked){
+				document.getElementById(style.visibility="hidden";
+				document.forms[0].txtTipo.style.visibility="hidden";
+				document.forms[0].lblCausa.style.visibility="hidden";
+				document.forms[0].txtCausa.style.visibility="hidden";
+			}
+		}
+	</script>
+	
+  </body>
+</html>
