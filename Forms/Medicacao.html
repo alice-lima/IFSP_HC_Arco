@@ -29,7 +29,7 @@
 		<label>Receita</label>
 		<input type="text" placeholder="Ex.: 000000000" maxlength="9" autocomplete="off">
 		<label>Prescrição</label>
-		<input type="text" placeholder="Ex.: dd/mm/aaaa" mask="00/00/0000" maxlength="8" autocomplete="off">
+		<input type="text" class="form-control" placeholder="Ex.: dd/mm/aaaa" data-mask="00/00/0000" maxlength="10" autocomplete="off">
 		</br>
 		<label>Classe Terapeutica</label>
 		<select name="" class="p">
@@ -59,7 +59,7 @@
 		</select>
 		
 		<label>Dosagem</label>
-		<input type="text" placeholder="Ex.: 2" maxlength="3" autocomplete="off">
+		<input type="number" placeholder="Ex.: 2" min="1" max="10" autocomplete="off">
 		<label>Unidade</label>
 		<select>
 		<option>Selecione</option>
@@ -68,10 +68,10 @@
 		<option>ml</option>
 		</select>
 		<label>Frequência</label>
-		<input type="text" placeholder="Ex.: 2x" maxlength="3" autocomplete="off">
+		<input type="number" placeholder="Ex.: 2x" min="1" max="10" autocomplete="off">
 		</br>
 		<label>Duração</label>
-		<input type="text" placeholder="Ex.: 7 dias" maxlength="20" autocomplete="off">
+		<input type="text" placeholder="Ex.: 7 dias" maxlength="20" autocomplete="off" size="10">
 		<input type="checkbox">Uso Contínuo</input> 
 		</br>
 		</br>
