@@ -8,7 +8,7 @@
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <title>ARCO</title>
+    <title>Paciente</title>
   </head>
   <body>
  
@@ -31,13 +31,14 @@
 		
 		<fieldset>
 			<legend>Endereço	</legend>
+			<label>CEP</label>
+			<input type="text" class="form-control" placeholder="Ex.: 00000-000" cep-mask="00000-000" maxlength="10" autocomplete="off">
+			</br>
 			<label>Logradouro</label>
 			<input/>
 			<label>Complemento</label>
 			<input/>
 			<br/>
-			<label>CEP</label>
-			<input type="text" class="form-control" placeholder="Ex.: 00000-000" cep-mask="00000-000" maxlength="10" autocomplete="off">
 			<label>Bairro</label>
 			<input/>
 			<br/>
@@ -104,6 +105,7 @@
 			<li><input type="checkbox">Cônjuge</li>
 			<li><input type="checkbox">Filhos</li>
 			<li><input type="checkbox">Outro</li>
+			<input/>
 		</ul>
 	
 		<label>Escolaridade</label>
@@ -147,6 +149,7 @@
 				<li><input type="checkbox">Tabagismo</li>
 				<li><input type="checkbox">Etilismo</li>
 				<li><input type="checkbox">Outros</li>
+			<input/>
 			</ul>
 		</fieldset>
 		
@@ -157,6 +160,7 @@
 				<li><input type="checkbox">Mau desempenho escolar</li>
 				<li><input type="checkbox">Repetição de ano escolar</li>
 				<li><input type="checkbox">Outros</li>
+				<input/>
 			</ul>
 		</fieldset>
 		
@@ -167,6 +171,7 @@
 				<li><input type="checkbox">Presença de agressividade/violência em algum momento da vida</li>
 				<li><input type="checkbox">Envolvimento em conflitos interpessoais</li>
 				<li><input type="checkbox">Outros</li>
+				<input/>
 			</ul>
 		</fieldset>
 		
@@ -199,6 +204,7 @@
 			<li><input type="radio" name="grupo3" value="">Não</li>
 			<li><input type="radio" name="grupo3" value="">Não há informações</li>
 			<li><input type="radio" name="grupo3" value="">Outro</li>
+			<input/>
 		</ul>
 	
 		<br/>
@@ -213,6 +219,7 @@
 					<li><input name="cboEcstasy" type="checkbox">Ecstasy e/ou estimulantes</li>
 					<li><input name="cboMaconha" type="checkbox">Maconha</li>
 					<li><input name="cboOutros" type="checkbox">Outros</li>
+				<input/>
 				</ul>
 			
 			<li><input type="radio" name="grupo" value="">Não</li>
