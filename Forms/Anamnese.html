@@ -75,16 +75,16 @@
 		<legend>TCE's anteriores</legend>
 		<form>
 		<ul>
-			<li><input type="radio" id="sim" onclick="aparece()" name="grupo7" value="sim">Sim
-				<br/>
-				<label type="text" id="lblTipo" style="visibility:hidden;">Tipo</label>
-				<input type="text" name="txtTipo" style="visibility:hidden;">
-				<br/>
-				<label type="text" ="lblCausa" style="visibility:hidden;">Causa</label>
-				<input type="text" name="txtCausa" style="visibility:hidden;">
 			<li><input type="radio" id="nao" onclick="aparece()" name="grupo7" value="nao">Não</li>
-			
-			
+			<li><input type="radio" id="sim" onclick="aparece()" name="grupo7" value="sim">Sim
+			<br/>
+			<ul>
+				<li><label type="text" id="lblTipo">Tipo</label></li>
+				<input type="text" name="txtTipo">
+				<br/>
+				<li><label type="text" ="lblCausa">Causa</label></li>
+				<input type="text" name="txtCausa">
+			</ul>
 		</ul>
 		</form>
 	</fieldset>
@@ -93,7 +93,7 @@
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
     <script src="js/bootstrap.min.js"></script>
 	
-	<script>
+	<!--<script>
 		function aparece(){
 			if(document.getElementById("sim").checked){		
 				document.forms[0].lblTipo.style.visibility="visible";
@@ -108,7 +108,7 @@
 				document.forms[0].txtCausa.style.visibility="hidden";
 			}
 		}
-	</script>
+	</script>-->
 	
   </body>
 </html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Exames</title>
+	
+  </head>
+  <body>
+	<h2>Exame</h2>
+	
+	
+	<label>Paciente</label>
+	<select id="pacientes">
+		<option>Selecione</option>
+		<option onclick="preencher()">Pedro Barbosa Correa</option>
+	</select>
+	</br>
+	<label>RGHC</label>
+	<input id="rghc" type="text" maxlength="30" value="">
+	<br/>
+	<br/>
+	
+	<table border="2" align="center">
+		<caption>Exames Solicitados</caption>
+		<tr>
+			<th style="background-color:#5882FA; color:white">Nome</th>
+			<th style="background-color:#5882FA; color:white">Data</th>
+			<th style="background-color:#5882FA; color:white">Resultado Registrado</th>
+		</tr>
+		<tr id="linha1" onclick="changeBgColor(this);" style="cursor: hand;" value="">
+			<td>RM</td>
+			<td>14/06/2018</td>
+			<td>Sim</td>
+		</tr>
+		<tr id="linha2" onclick="changeBgColor(this);" style="cursor: hand;" value="" >
+			<td>TCC</td>
+			<td>04/01/2019</td>
+			<td>Não</td>
+		</tr>
+	</table>
+	
+	<form>
+		<fieldset name="inserir">
+			<legend>Inserir Resultado</legend>
+			<label>Nome Exame:</label>
+			<label>TCC</label>
+			</br>
+			</br>
+			<label>Resultado:</label>
+			</br>
+			<input type="radio" name="grupo" value="Não">Normal</input>
+			<input type="radio" name="grupo" value="Sim">Alterado
+				<ul> 
+					<li><input name="cboContusao" type="checkbox">Contusão</li>
+					<li><input name="cboHemorragia" type="checkbox">Hemorragia Sub-aracnóidea </li>
+					<li><input name="cboFratura" type="checkbox">Fratura de crânio </li>
+					<li><input name="cboAfundamento" type="checkbox">Afundamento</li>
+					<li><input name="cboOutros" type="checkbox">Outros</li>
+					<input/>
+					
+				</ul>
+			
+			<br/>
+			<button>Registrar Resultado</button>
+			
+		</fieldset>
+	</form>
+	</br>
+	</br>
+	<form>
+		<fieldset name="resultado">
+			<legend>Resultado</legend>
+			<label>Nome Exame:</label>
+			<label>RM</label>
+			</br>
+			</br>
+			<label>Resultado:</label>
+			</br>
+			</br>
+			<label>Alterado</label>
+			</br>
+			<label>Contusão Occipital</label>
+		</fieldset>
+	</form>
+	</br>
+	</br>
+	
+	<button>Solicitar Novo</button>
+	
+	
+	
+	<style>
+		.row-clicked {
+			background-color: #CEF6F5;
+		}
+	</style>
+	
+	<script type="text/javascript">
+    function changeBgColor(element) {
+        if(element.className === 'row-clicked') {
+            element.className = '';
+			element.value = 'desativada';
+        } else {
+            element.className = 'row-clicked';
+			element.value = 'ativada';
+        }
+    }
+	</script>
+	
+	<script type="text/javascript">
+    function preencher() {
+	
+		jQuery("#pacientes").change(function(){
+			document.getElementById("rghc").value = 7617254623543;
+		});
+	}
+
+	</script>
+	
+	<!--<script>
+		function aparece(){
+			if(document.getElementById("linha1").value == "ativada"){		
+				document.forms[0].resultado.style.visibility="visible";
+				document.forms[1].inserir.style.visibility="visible";
+				
+			}
+			else if(document.getElementById("linha2").value == "ativada"){
+				document.forms[0].resultado.style.visibility="visible";
+				document.forms[1].inserir.style.visibility="visible";
+			}
+			else if((document.getElementById("linha1").value == "desativada") && (document.getElementById("linha2").value == "desativada")){
+				document.forms[0].resultado.style.visibility="hidden";
+				document.forms[1].inserir.style.visibility="hidden";
+			}
+		}
+	</script>-->
+	
+	<script src="js/jquery.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+	
+  </body>
+</html>

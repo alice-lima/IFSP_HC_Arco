@@ -26,9 +26,10 @@
 		<input type="text" class="form-control" placeholder="Ex.: dd/mm/aaaa" data-mask="00/00/0000" maxlength="10" autocomplete="off">
 		<br/>
 		
-		<label>Naturalidade</label>
-		<input type="text" class="form-control" placeholder="Ex.: Cidade - UF, País" maxlength="100" autocomplete="off">
-		<br/>
+		<label>Nascido em</label>
+		<input type="text" class="form-control" placeholder="Ex.: Cidade" maxlength="100" autocomplete="off">
+		<input type="text" class="form-control" placeholder="Ex.: Estado" maxlength="100" autocomplete="off">
+		<input type="text" class="form-control" placeholder="Ex.: País" maxlength="100" autocomplete="off"><br/>
 		<br/>
 		
 		<fieldset>
@@ -110,25 +111,19 @@
 			<input/>
 		</ul>
 	
-		<label>Escolaridade</label>
-		<ul>
-			<li><input type="radio" name="grupo1" value="">Fundamental Incompleto</li>
-			<li><input type="radio" name="grupo1" value="">Fundamental Completo</li>
-			<li><input type="radio" name="grupo1" value="">Médio Incompleto</li>
-			<li><input type="radio" name="grupo1" value="">Médio Completo</li>
-			<li><input type="radio" name="grupo1" value="">Superior Incompleto</li>
-			<li><input type="radio" name="grupo1" value="">Superior Completo</li>
-		</ul>
+		<label>Escolaridade (em anos de estudo)</label>
+		<input type="number" min="0" max="50" autocomplete="off">
 		
+		<br/>
 		<label>Nível Socioeconômico</label>
 		<!--<button>Calcular</button>-->
-		<ul>
-			<li><input type="radio" name="grupo2" value="">A</li>
-			<li><input type="radio" name="grupo2" value="">B</li>
-			<li><input type="radio" name="grupo2" value="">C</li>
-			<li><input type="radio" name="grupo2" value="">D</li>
-			<li><input type="radio" name="grupo2" value="">E</li>
-		</ul>
+		
+			<input type="radio" name="grupo2" value="">A
+			<input type="radio" name="grupo2" value="">B
+			<input type="radio" name="grupo2" value="">C
+			<input type="radio" name="grupo2" value="">D
+			<input type="radio" name="grupo2" value="">E
+		
 	
 	</fieldset>
 	
@@ -213,8 +208,9 @@
 		<label>Uso de drogas ilícitas</label>
 		<ul>
 		<form>
+			<li><input type="radio" name="grupo" value="">Não</li>
 			<li><input type="radio" onclick="aparece()" name="grupo" value="" id="sim">Sim</li>
-				<ul style="visibility:hidden;" name="testando"> 
+				<ul name="testando"> 
 					<li><input name="cboCocaina" type="checkbox">Cocaína</li>
 					<li><input name="cboCrack" type="checkbox">Crack</li>
 					<li><input name="cboHeroina" type="checkbox">Heroína</li>
@@ -223,20 +219,24 @@
 					<li><input name="cboOutros" type="checkbox">Outros</li>
 				<input/>
 				</ul>
-			
-			<li><input type="radio" name="grupo" value="">Não</li>
 			</form>
 		</ul>	
 	</fieldset>
 	
-	<script>
-		if(document.getElementById("sim").checked){
-			document.forms(0).testando.style.visibility = "visible";
-		}
-		else{
-			document.forms(0).testando.style.visibility = "hidden";
+	<script type="text/javascript">
+		function aparece(){
+		
+			if(document.getElementById("sim")){
+				document.forms(0).testando.style.visibility = "visible";
+			}
+			else{
+				document.forms(0).testando.style.visibility = "hidden";
+			}
 		}
 	</script>
+	
+	<br/>
+	<br/>
 	<button>Próximo</button>
    
     <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
