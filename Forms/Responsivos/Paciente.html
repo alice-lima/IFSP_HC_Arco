@@ -8,6 +8,8 @@
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	
 	<style>
 		#end {
 			float:left;
@@ -29,6 +31,25 @@
   </head>
   <body>
   
+  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+		<a class="navbar-brand">ARCO - Paciente</a>
+		
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="C:\Users\Beatryz\Documents\Trabalhos Alice\TCC\master\Forms\Responsivos\QueixasAtuais.html">Queixas</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="C:\Users\Beatryz\Documents\Trabalhos Alice\TCC\master\Forms\Responsivos\Acompanhante.html">Acompanhante</a>
+		  </li>
+		</ul>
+	</nav>
+	
+	<br/><br/><br/>
+	
 	<div class="card">
 		<div class="card-body">
 		<h5 class="card-header">Dados Pessoais</h5>
@@ -79,7 +100,7 @@
 						<li><input type="checkbox"> Cônjuge</li>
 						<li><input type="checkbox"> Filhos</li>
 						<li><input type="checkbox"> Outro</li>
-						<input/>
+						<input type="text" class="form-control">
 					</div>
 				</ul>
 			</div>
@@ -184,8 +205,8 @@
 		<br/>
 		<div class="form-row">
 		
-		<div class="card" style="width:23%">
-			<h5 class="card-header">Gerais</h5>
+		<div class="form-group col-md-4">
+			<h5 class="card-title">Gerais</h5>
 				<ul class="list-unstyled">
 					<li><input type="checkbox"> AVC</li>
 					<li><input type="checkbox"> Meningite</li>
@@ -200,93 +221,100 @@
 					<li><input type="checkbox"> Tabagismo</li>
 					<li><input type="checkbox"> Etilismo</li>
 					<li><input type="checkbox"> Outros</li>
-				<input/>
+				<input type="text" class="form-control" style="width: 80%">
 				</ul>
 		</div>
 		
-		&nbsp &nbsp &nbsp &nbsp
 		
-		<div class="card" style="width:23%">
-			<h5 class="card-header">Problemas cognitivos pré-morbidos</h5>
+		
+		<div class="form-group col-md-4">
+			<h5 class="card-title">Problemas cognitivos pré-morbidos</h5>
 			<ul class="list-unstyled">
 				<li><input type="checkbox"> Dificuldade de aprendizagem na infância</li>
 				<li><input type="checkbox"> Mau desempenho escolar</li>
 				<li><input type="checkbox"> Repetição de ano escolar</li>
 				<li><input type="checkbox"> Outros</li>
-				<input/>
+				<input type="text" class="form-control" style="width: 80%">
 			</ul>
 		</div>
 			
-		&nbsp &nbsp &nbsp &nbsp
 		
-		<div class="card" style="width:23%">
-			<h5 class="card-header">Problemas comportamentais pré-morbidos</h5>
+		
+		<div class="form-group col-md-4">
+			<h5 class="card-title">Problemas comportamentais pré-morbidos</h5>
 				<ul class="list-unstyled">
 					<li><input type="checkbox"> Presença de delírios e/ou alucinações em algum momento da vida</li>
 					<li><input type="checkbox"> Presença de agressividade/violência em algum momento da vida</li>
 					<li><input type="checkbox"> Envolvimento em conflitos interpessoais</li>
 					<li><input type="checkbox"> Outros</li>
-					<input/>
+					<input type="text" class="form-control" style="width: 80%">
 				</ul>
 		</div>
 			
-		&nbsp &nbsp &nbsp &nbsp	
+		
 			
-		<div class="card" style="width:23%">
-			<h5 class="card-header">Problemas de humor pré-morbidos</h5>
+		<div class="form-group col-md-4">
+			<h5 class="card-title">Problemas de humor pré-morbidos</h5>
 				<ul class="list-unstyled">
 					<li><input type="checkbox"> Presença de episódio depressivo/sintomas depressivos</li>
 					<li><input type="checkbox"> Presença de sintomas ansiosos/ansiedade generalizada </li>
 					<li><input type="checkbox"> Presença de distúrbio bipolar</li>
 					<li><input type="checkbox"> Presença de sintomas de outros distúrbios ansiosos</li>
 				</ul>
+		</div>	
+	
+		<div class="form-group col-md-4">
+			<h5 class="card-title">Antecedentes familiares</h5>
+			<label>Fatores de risco vascular</label>
+			<input type="text" class="form-control" style="width: 80%">
+			<label>Outro fator relevante</label>
+			<input type="text" class="form-control" style="width: 80%">
+		</div>
+		
 		</div>
 		</div>
 	</div>
-	</div>
 	
-	<fieldset>
-		<legend>Antecedentes familiares</legend>
-		<label>Fatores de risco vascular</label>
-		<input/>
+	<div class="card">
+		<h5 class="card-header">Vícios</h5>
 		<br/>
-		<label>Outro fator relevante</label>
-		<input/>
-	</fieldset>
-	
-	<fieldset>
-		<legend>Vícios</legend>
-		<label>Uso/abuso/dependência de álcool</label>
-		<ul class="list-unstyled">
-			<li><input type="radio" name="grupo3" value=""> Sim</li>
-			<li><input type="radio" name="grupo3" value=""> Não</li>
-			<li><input type="radio" name="grupo3" value=""> Não há informações</li>
-			<li><input type="radio" name="grupo3" value=""> Outro</li>
-			<input/>
-		</ul>
-	
-		<br/>
-		<label>Uso de drogas ilícitas</label>
-		<ul class="list-unstyled">
-		<form>
-			<li><input type="radio" name="grupo" value=""> Não</li>
-			<li><input type="radio" onclick="aparece()" name="grupo" value="" id="sim"> Sim</li>
-				<ul name="testando"> 
-					<li><input name="cboCocaina" type="checkbox"> Cocaína</li>
-					<li><input name="cboCrack" type="checkbox"> Crack</li>
-					<li><input name="cboHeroina" type="checkbox"> Heroína</li>
-					<li><input name="cboEcstasy" type="checkbox"> Ecstasy e/ou estimulantes</li>
-					<li><input name="cboMaconha" type="checkbox"> Maconha</li>
-					<li><input name="cboOutros" type="checkbox"> Outros</li>
-				<input/>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<h5 class="card-title">Uso/abuso/dependência de álcool</h5>
+				<ul class="list-unstyled">
+					<li><input type="radio" name="grupo3" value=""> Sim</li>
+					<li><input type="radio" name="grupo3" value=""> Não</li>
+					<li><input type="radio" name="grupo3" value=""> Não há informações</li>
+					<li><input type="radio" name="grupo3" value=""> Outro</li>
+					<input type="text" class="form-control" style="width: 80%">
 				</ul>
-			</form>
-		</ul>	
-	</fieldset>
+			</div>
+			
+			<div class="form-group col-md-4">
+					<h5 class="card-title">Uso de drogas ilícitas</h5>
+				<ul class="list-unstyled">
+				<form>
+					<li><input type="radio" name="grupo" value=""> Não</li>
+					<li><input type="radio" onclick="aparece()" name="grupo" value="" id="sim"> Sim</li>
+						<ul name="testando"> 
+							<li><input name="cboCocaina" type="checkbox"> Cocaína</li>
+							<li><input name="cboCrack" type="checkbox"> Crack</li>
+							<li><input name="cboHeroina" type="checkbox"> Heroína</li>
+							<li><input name="cboEcstasy" type="checkbox"> Ecstasy e/ou estimulantes</li>
+							<li><input name="cboMaconha" type="checkbox"> Maconha</li>
+							<li><input name="cboOutros" type="checkbox"> Outros</li>
+						<input type="text" class="form-control" style="width: 80%">
+						</ul>
+					</form>
+				</ul>
+			</div>
+		</div>
+	</div>
 	
 	<br/>
 	<div class="form" style="width: 96%;">
-		<button id="seguir" class="btn btn-primary btn-lg">Próximo</button>
+		<a href="C:\Users\Beatryz\Documents\Trabalhos Alice\TCC\master\Forms\Responsivos\Acompanhante.html">
+		<button id="seguir" class="btn btn-primary btn-lg">Continuar</button>
 	</div>
 	
 	<script type="text/javascript">
