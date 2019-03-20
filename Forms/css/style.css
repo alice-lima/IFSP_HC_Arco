@@ -56,3 +56,35 @@ div.esquerda {
 	background-color:#5882FA;
 	color:white;
 }
+
+div.center {
+	align: center;
+}
+
+table.agenda {
+	width: 70%;
+}
+
+tr.mudarCor {
+	color: red;
+}
+
+.fontDate {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	margin-right: 20px;
+	float: right;
+}
+
+.topoDireito {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 200px;
+	top: 70px;
+}
+
+.margemEsquerda {
+	margin-left: 20px;
+}
+
