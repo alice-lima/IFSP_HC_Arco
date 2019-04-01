@@ -10,6 +10,8 @@
 	<link href="../css/style.css" rel="stylesheet">
 	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 	<title>Paciente</title>
   </head>
   <body>
@@ -47,7 +49,7 @@
 			
 			<div class="form-group col-md-3">
 				<label>CPF</label>
-				<input type="text" class="form-control" id="inputCpf" placeholder="Ex.: 111.222.333-44">
+				<input type="text" class="form-control" id="cpf" placeholder="Ex.: 111.222.333-44" onsubmit="TestaCPF(this)">
 			</div>
 			
 			<div class="form-group col-md-3">
@@ -108,16 +110,16 @@
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="inputCEP">CEP</label>
-						<input type="text" class="form-control" placeholder="Ex.: 00000-000" cep-mask="00000-000" maxlength="10" autocomplete="off">
+						<input type="text" class="form-control" placeholder="Ex.: 00000-000" cep-mask="00000-000" maxlength="10" autocomplete="off" id="cep">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="inputCity">Cidade</label>
-						<input type="text" class="form-control" id="inputCity">
+						<input type="text" class="form-control" id="cidade">
 					</div>
 
 					<div class="form-group col-md-4">
 						<label for="inputEstado">Estado</label>
-						<select id="inputEstado" class="form-control">
+						<select id="uf" class="form-control">
 							<option>Selecione</option>
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
@@ -153,15 +155,15 @@
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="Address">Logradouro</label>
-						<input type="text" class="form-control" id="inputAddress">
+						<input type="text" class="form-control" id="logradouro">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="Address">Número</label>
-						<input type="number" min="0" class="form-control" id="inputAddress">
+						<input type="number" min="0" class="form-control" id="numero">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="Address">Complemento</label>
-						<input type="text" class="form-control" id="inputAddress">
+						<input type="text" class="form-control" id="complemento">
 					</div>
 				</div>
 			</div>
@@ -318,10 +320,61 @@
 		}
 	</script>
 	
+	<script type="text/javascript">
+		$("#cep").focusout(function(){
+			//Início do Comando AJAX
+			$.ajax({
+				//O campo URL diz o caminho de onde virá os dados
+				//É importante concatenar o valor digitado no CEP
+				url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+				//Aqui você deve preencher o tipo de dados que será lido,
+				//no caso, estamos lendo JSON.
+				dataType: 'json',
+				//SUCESS é referente a função que será executada caso
+				//ele consiga ler a fonte de dados com sucesso.
+				//O parâmetro dentro da função se refere ao nome da variável
+				//que você vai dar para ler esse objeto.
+				success: function(resposta){
+					//Agora basta definir os valores que você deseja preencher
+					//automaticamente nos campos acima.
+					$("#logradouro").val(resposta.logradouro);
+					$("#complemento").val(resposta.complemento);
+					$("#bairro").val(resposta.bairro);
+					$("#cidade").val(resposta.localidade);
+					$("#uf").val(resposta.uf);
+					//Vamos incluir para que o Número seja focado automaticamente
+					//melhorando a experiência do usuário
+					$("#numero").focus();
+				}
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		$("#cpf").focusout(function TestaCPF(strCPF) {
+		    var Soma;
+		    var Resto;
+		    Soma = 0;
+		  if (strCPF == "00000000000") return alert('CPF inválido');
+		     
+		  for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+		  Resto = (Soma * 10) % 11;
+		   
+		    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+		    if (Resto != parseInt(strCPF.substring(9, 10)) ) return alert('CPF inválido');
+		   
+		  Soma = 0;
+		    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+		    Resto = (Soma * 10) % 11;
+		   
+		    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+		    if (Resto != parseInt(strCPF.substring(10, 11) ) ) return alert('CPF inválido');
+		    return alert('CPF válido');
+		});
+	</script>
 	
 	
-   
-    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
     <script src="js/jquery.js"></script>
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
     <script src="js/bootstrap.min.js"></script>
