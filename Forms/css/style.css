@@ -57,8 +57,21 @@ div.esquerda {
 	color:white;
 }
 
-div.center {
-	align: center;
+.center {
+	width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.box {
+	width: 120vw;
+	height: 500px;
+	margin-left: 25%;
+	margin-right: 25%
+	margin-top: 50px;
 }
 
 table.agenda {
