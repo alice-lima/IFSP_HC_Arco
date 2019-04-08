@@ -18,25 +18,29 @@
   
   <div class="center-form">
   <form>
-    <div id="colorir" class="card" style="width: 25rem;">
-  <img src="resources/patient_login.png" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">Bem Vindo ao ARCO!</h5>
-    <p class="card-text">Olá, paciente e acompanhante. Vamos começar? Nos informe se é sua primeira vez aqui ou se já está registrado.</p>
-  </div>
-  
- <div class="form-row">
-	&nbsp &nbsp &nbsp
-  <div class="form" style="width: 46%;">
-    <a class="card-link" href="pages/Paciente.html">Primeira vez</a>
-  </div>
-  <div class="form" style="width: 46%;">
-    <a class="card-link" href="pages/Acompanhante.html">Já estou registrado</a>
-  </div>
-  </div>
-</div>
-	
+    <div style="width: 25rem;">
+	  <img src="resources/patient_login.png" class="card-img-top">
+	  <div>
+	    <h5 class="card-title margemEsquerda">Bem Vindo ao ARCO!</h5>
+	    <p class="card-text margemEsquerda">Olá, paciente e acompanhante. Vamos começar? Nos informe se é sua primeira vez aqui ou se já está registrado.</p>
+	  </div>
+	  <div class="quadrado">
+			<a class="card-link" href="index.html">Cadastrar-se</a>
+	  </div>
+	</div>
   </form>
+</div>
+
+	<input type="text" name="login" class="form-control" placeholder="Login" autocomplete="off"></input>
+	<input type="text" name="senha" class="form-control" placeholder="Senha" autocomplete="off"></input>
+	&nbsp &nbsp &nbsp
+	<div class="form-row">
+		<div class="form direita">
+			<a href="pages/Paciente.html">
+			<button id="entrar" class="btn btn-primary btn-lg">Entrar</button>
+		</div>
+	</div>
+ 
   </div>
 
    <script src="js/jquery.js"></script>
